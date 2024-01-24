@@ -2,6 +2,8 @@ package view_controller;
 
 import model.Equation;
 import model.Library;
+import model.Quadratic;
+import model.Superlative;
 
 public class EquationController extends Menu {
 
@@ -30,12 +32,14 @@ public class EquationController extends Menu {
     public void calculateSuperlativeEquation (){
         double a = Library.getDoubleFromInput("A");
         double b = Library.getDoubleFromInput("B");
-        eq.Superlative(a, b);
+        Superlative s = new Superlative(a,b);        
+        eq.SuperlativeEquation(s);
     }
     public void calculateQuadraticEquation (){
         double a = Library.getDoubleFromInput("A");
         double b = Library.getDoubleFromInput("B");
         double c = Library.getDoubleFromInput("C");
-        eq.Quadratic(a, b, c);
+        Quadratic q = new Quadratic(a,b,c);        
+        eq.QuadraticEquation(q);
     }
 }
