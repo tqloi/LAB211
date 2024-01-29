@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Equation {
+public class Functions {
 
     private List<Double> doubles;
 
-    public Equation() {
+    public Functions() {
         doubles = new ArrayList<>();
     }
 
