@@ -12,11 +12,13 @@ import model.Intern;
 public class InternView extends Menu {
 
     private CandidateController cList;
+    private Input ip;
 
     public InternView(CandidateController cList) {
         super("Internship Candidate management", new String[]{"Create Candidate", "Display all Candidate",
             "Delete Candidate", "Quit"});
         this.cList = cList;
+        ip = new Input();
     }
 
     public void execute(int n) {
@@ -39,17 +41,17 @@ public class InternView extends Menu {
     private void addIntern() {
         System.out.println("Creating an Intern Candidate:");
 
-        String candidateId = Input.generateId("IN");
-        String firstName = Input.getStringFromInput("First Name");
-        String lastName = Input.getStringFromInput("Last Name");
-        int birthDate = Input.getYearFromInput("Birth Year");
-        String address = Input.getStringFromInput("Address");
-        String phone = Input.getPhoneNumberFromInput("Phone");
-        String email = Input.getEmailFromInput("Email");
+        String candidateId = ip.generateId("IN");
+        String firstName = ip.getStringFromInput("First Name");
+        String lastName = ip.getStringFromInput("Last Name");
+        int birthDate = ip.getYearFromInput("Birth Year");
+        String address = ip.getStringFromInput("Address");
+        String phone = ip.getPhoneNumberFromInput("Phone");
+        String email = ip.getEmailFromInput("Email");
 
-        String major = Input.getStringFromInput("Major");
-        String semester = Input.getStringFromInput("Semester");
-        String university = Input.getStringFromInput("University");
+        String major = ip.getStringFromInput("Major");
+        String semester = ip.getStringFromInput("Semester");
+        String university = ip.getStringFromInput("University");
 
         Intern intern = new Intern(candidateId, firstName, lastName, birthDate, address, phone, email, 2, major, semester, university);
         cList.addInterm(intern);
@@ -69,7 +71,7 @@ public class InternView extends Menu {
     }
 
     private void deleteIntern() {
-        String code = Input.getStringFromInput("candidate ID");
+        String code = ip.getStringFromInput("candidate ID");
         if (cList.delExperience(code)) {
             System.out.println("Delete successfully");
         } else {

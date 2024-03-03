@@ -2,7 +2,7 @@
 package view;
 
 import controller.FileController;
-import utils.Library;
+import Library.Input;
 
 /**
  *
@@ -11,25 +11,25 @@ import utils.Library;
 public class FilePersonView extends Menu<String> {
 
     private FileController fileController;
-    private Library library;
+    private Input ip;
 
     public FilePersonView(FileController fileController) {
         super("File processing", new String[]{"Find person info", "Copy Text to new file", "Exit"});
         this.fileController = fileController;
-        library = new Library();
+        ip = new Input();
     }
 
     @Override
     public void execute(int n) {
         switch (n) {
             case 1:
-                String path = library.getString("Enter path");
-                Float money = library.getFloat("Enter money");
+                String path = ip.getString("Enter path");
+                Float money = ip.getFloat("Enter money");
                 fileController.displayPersons(path, money);
                 break;
             case 2:
-                String src = library.getString("Enter source");
-                String newFile = library.getString("Enter new file");
+                String src = ip.getString("Enter source");
+                String newFile = ip.getString("Enter new file");
                 fileController.copyData(src, newFile);
                 break;
             case 3:

@@ -5,17 +5,17 @@ import java.util.Scanner;
 
 public class Input {
 
-    private static int counter = 1;
+    private int counter = 1;
+    private Scanner sc = new Scanner(System.in);
 
-    public static String generateId(String prefix) {
+    public String generateId(String prefix) {
 
         String id = prefix + String.format("%04d", counter);
         counter++;
         return id;
     }
 
-    public static int getIntFromInput(String name) {
-        Scanner sc = new Scanner(System.in);
+    public int getIntFromInput(String name) {
         int number;
         while (true) {
             System.out.print("Enter " + name + ": ");
@@ -33,8 +33,7 @@ public class Input {
         }
     }
 
-    public static String getStringFromInput(String name) {
-        Scanner sc = new Scanner(System.in);
+    public String getStringFromInput(String name) {
         String s = null;
         while (s == null || s.isEmpty()) {
             System.out.print("Enter " + name + ": ");
@@ -43,8 +42,7 @@ public class Input {
         return s;
     }
 
-    public static String getEmailFromInput(String name) {
-        Scanner sc = new Scanner(System.in);
+    public String getEmailFromInput(String name) {
         String email;
         do {
             System.out.print(name + ": ");
@@ -56,8 +54,7 @@ public class Input {
         return email;
     }
 
-    public static int getYearFromInput(String name) {
-        Scanner sc = new Scanner(System.in);
+    public int getYearFromInput(String name) {
         int year;
         do {
             System.out.print(name + ": ");
@@ -70,8 +67,7 @@ public class Input {
         return year;
     }
 
-    public static String getPhoneNumberFromInput(String name) {
-        Scanner sc = new Scanner(System.in);
+    public String getPhoneNumberFromInput(String name) {
         String phoneNumber;
         do {
             System.out.print(name + ": ");
@@ -83,8 +79,7 @@ public class Input {
         return phoneNumber;
     }
 
-    public static String getRankFromInput(String name) {
-        Scanner sc = new Scanner(System.in);
+    public String getRankFromInput(String name) {
         String graduationRank;
         do {
             System.out.print(name + ": ");
@@ -96,20 +91,20 @@ public class Input {
         return graduationRank;
     }
 
-    private static boolean isValidEmail(String email) {
+    private boolean isValidEmail(String email) {
         return email.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
     }
 
-    private static boolean isValidBirthYear(int year) {
+    private boolean isValidBirthYear(int year) {
         int currentYear = java.time.Year.now().getValue();
         return year >= 1900 && year <= currentYear;
     }
 
-    private static boolean isValidPhoneNumber(String number) {
+    private boolean isValidPhoneNumber(String number) {
         return number.matches("\\d{10,}");
     }
 
-    private static boolean isValidRank(String graduationRank) {
+    private boolean isValidRank(String graduationRank) {
         return graduationRank.matches("Excellence|Good|Fair|Poor");
     }
 }

@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_5/calculator/src/model/Input.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_5/calculator/src/controller/CalController.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_5/calculator/src/Library/Input.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_5/calculator/src/App/Application.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_5/calculator/src/view/CalView.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_5/calculator/src/model/Calculator.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class Input {
 
-    public static int getIntFromInput(String name) {
+    private Scanner sc = new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
+    public int getIntFromInput(String name) {
+
         int number;
         while (true) {
             System.out.print("Enter " + name + ": ");

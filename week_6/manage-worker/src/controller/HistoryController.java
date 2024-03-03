@@ -1,7 +1,7 @@
 
 package controller;
 
-import dao.HistoryDao;
+import model.HistoryDao;
 
 public class HistoryController {
 

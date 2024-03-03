@@ -1,16 +1,16 @@
 package controller;
 
 import model.Dictionary;
-import utils.Library;
+import Library.Input;
 
 public class DicController {
 
     private Dictionary dictionary;
-    private Library library;
+    private Input library;
 
     public DicController(Dictionary dictionary) {
         this.dictionary = dictionary;
-        library = new Library();
+        library = new Input();
     }
 
     public void addWord(String eng, String vie) {

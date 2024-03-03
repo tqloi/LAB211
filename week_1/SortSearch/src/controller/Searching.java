@@ -7,7 +7,8 @@ import java.util.Arrays;
 
 public class Searching extends Menu {
 
-    private final Algorithm algo;
+    private Algorithm algo;
+    private Input ip;
 
     public Searching(Algorithm a) {
         super("Searching", new String[]{"Linear Search", "Binary Search", "Quit"});
@@ -33,7 +34,7 @@ public class Searching extends Menu {
         int[] array = algo.getArray().clone();
         algo.bubbleSort(array);
         System.out.println("Sorted array: " + Arrays.toString(array));
-        int target = Input.getIntFromInput("search value");
+        int target = ip.getIntFromInput("search value");
         String result = algo.linearSearch(array, target);
         System.out.println(result);
     }
@@ -42,7 +43,7 @@ public class Searching extends Menu {
         int[] array = algo.getArray().clone();
         algo.quickSort(array, 0, array.length - 1);
         System.out.println("Sorted array: " + Arrays.toString(array));
-        int target = Input.getIntFromInput("search value");
+        int target = ip.getIntFromInput("search value");
         String result = algo.binarySearch(array, target);
         System.out.println(result);
     }

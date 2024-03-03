@@ -8,11 +8,13 @@ import model.Experience;
 public class ExpView extends Menu {
 
     private CandidateController cList;
+    private Input ip;
 
     public ExpView(CandidateController cList) {
         super("Experience Candidate management", new String[]{"Create Candidate", "Display all Candidate",
             "Delete Candidate", "Quit"});
         this.cList = cList;
+        ip = new Input();
     }
 
     @Override
@@ -37,22 +39,22 @@ public class ExpView extends Menu {
         System.out.println("Creating an Experience Candidate:");
         int currentYear = java.time.Year.now().getValue();
 
-        String candidateId = Input.generateId("EX");
-        String firstName = Input.getStringFromInput("First Name");
-        String lastName = Input.getStringFromInput("Last Name");
-        int birthDate = Input.getYearFromInput("Birth Year");
-        String address = Input.getStringFromInput("Address");
-        String phone = Input.getPhoneNumberFromInput("Phone");
-        String email = Input.getEmailFromInput("Email");
+        String candidateId = ip.generateId("EX");
+        String firstName = ip.getStringFromInput("First Name");
+        String lastName = ip.getStringFromInput("Last Name");
+        int birthDate = ip.getYearFromInput("Birth Year");
+        String address = ip.getStringFromInput("Address");
+        String phone = ip.getPhoneNumberFromInput("Phone");
+        String email = ip.getEmailFromInput("Email");
 
         int expYear;
         do {
-            expYear = Input.getYearFromInput("Experience Year");
+            expYear = ip.getYearFromInput("Experience Year");
             if (expYear >= (currentYear - birthDate)) {
                 System.err.println("Invalid Experience Year");
             }
         } while (expYear >= (currentYear - birthDate));
-        String proSkill = Input.getStringFromInput("Professional Skills");
+        String proSkill = ip.getStringFromInput("Professional Skills");
 
         Experience experience = new Experience(candidateId, firstName, lastName, birthDate, address, phone, email, 0, expYear, proSkill);
         cList.addExperience(experience);
@@ -72,7 +74,7 @@ public class ExpView extends Menu {
     }
 
     private void deleteExperience() {
-        String code = Input.getStringFromInput("candidate ID");
+        String code = ip.getStringFromInput("candidate ID");
         if (cList.delExperience(code)) {
             System.out.println("Delete successfully");
         } else {

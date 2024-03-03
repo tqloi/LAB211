@@ -8,11 +8,13 @@ import model.Fresher;
 public class FresherView extends Menu {
 
     private CandidateController cList;
+    private Input ip;
 
     public FresherView(CandidateController cList) {
         super("Fresher Candidate management", new String[]{"Create Candidate", "Display all Candidate",
             "Delete Candidate", "Quit"});
         this.cList = cList;
+        ip = new Input();
     }
 
     @Override
@@ -36,22 +38,22 @@ public class FresherView extends Menu {
     private void addFresher() {
         System.out.println("Creating a Fresher Candidate:");
 
-        String candidateId = Input.generateId("FS");
-        String firstName = Input.getStringFromInput("First Name");
-        String lastName = Input.getStringFromInput("Last Name");
-        int birthDate = Input.getYearFromInput("Birth Year");
-        String address = Input.getStringFromInput("Address");
-        String phone = Input.getPhoneNumberFromInput("Phone");
-        String email = Input.getEmailFromInput("Email");
+        String candidateId = ip.generateId("FS");
+        String firstName = ip.getStringFromInput("First Name");
+        String lastName = ip.getStringFromInput("Last Name");
+        int birthDate = ip.getYearFromInput("Birth Year");
+        String address = ip.getStringFromInput("Address");
+        String phone = ip.getPhoneNumberFromInput("Phone");
+        String email = ip.getEmailFromInput("Email");
 
         int graduationDate;
         do {
-            graduationDate = Input.getYearFromInput("Graduation Year");
+            graduationDate = ip.getYearFromInput("Graduation Year");
             if (graduationDate <= birthDate) {
                 System.err.println("Invalid Graduation Year!");
             }
         } while (graduationDate <= birthDate);
-        String graduationRank = Input.getRankFromInput("Graduation Rank");
+        String graduationRank = ip.getRankFromInput("Graduation Rank");
 
         Fresher fresher = new Fresher(candidateId, firstName, lastName, birthDate, address, phone, email, 1, graduationDate, graduationRank);
         cList.addFresher(fresher);
@@ -71,7 +73,7 @@ public class FresherView extends Menu {
     }
 
     private void deleteExperience() {
-        String code = Input.getStringFromInput("candidate ID");
+        String code = ip.getStringFromInput("candidate ID");
         if (cList.delExperience(code)) {
             System.out.println("Delete successfully");
         } else {

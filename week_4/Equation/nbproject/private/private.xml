@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_4/Equation/src/Library/Input.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_4/Equation/src/model/Quadratic.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_4/Equation/src/view/EquationView.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_4/Equation/src/view/Menu.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_4/Equation/src/App/Application.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_4/Equation/src/model/Superlative.java</file>
+            <file>file:/D:/DE180921/@Java_sourcecode/LAB211/week_4/Equation/src/controller/EquationController.java</file>
+        </group>
     </open-files>
 </project-private>
