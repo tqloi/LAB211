@@ -2,7 +2,7 @@ package controller;
 
 import Library.Input;
 import view.Menu;
-import Model.Algorithm;
+import model.Algorithm;
 import java.util.Arrays;
 
 public class Searching extends Menu {

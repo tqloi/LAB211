@@ -24,7 +24,7 @@ public class FilePath {
     }
 
     public boolean isValidFilePath() {
-        String regex = "^[A-Za-z]:\\\\(?:[^\\\\]+\\\\)*[^\\\\]+\\.[A-Za-z]+$";
+        String regex = "^[A-Z]:\\\\(?:[^\\\\]+\\\\)*[^\\\\]+\\.[A-Za-z]+$";
         return Pattern.matches(regex, filePath);
     }
 

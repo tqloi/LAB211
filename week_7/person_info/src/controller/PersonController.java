@@ -13,7 +13,7 @@ public class PersonController {
     
     public void displayInfoPersons(Person[] persons) {
         personList.setPersons(persons);
-        for (Person person : personList.getPersons()) {
+        for (Person person : personList.sortPerson(personList.getPersons())) {
             System.out.println("Information of Person you have entered:");
             person.displayPersonInfo();
         }

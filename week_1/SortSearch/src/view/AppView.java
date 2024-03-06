@@ -2,7 +2,7 @@ package view;
 
 import controller.Sorting;
 import controller.Searching;
-import Model.Algorithm;
+import model.Algorithm;
 
 public class AppView extends Menu {
 

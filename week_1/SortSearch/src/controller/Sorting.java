@@ -2,7 +2,7 @@
 package controller;
 
 import view.Menu;
-import Model.Algorithm;
+import model.Algorithm;
 import java.util.Arrays;
 
 public class Sorting extends Menu {

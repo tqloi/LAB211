@@ -19,7 +19,7 @@ public class PersonInfo extends Menu {
     public void execute(int n) {
         switch (n) {
             case 1:
-                Person[] persons = new Person[3]; // Khởi tạo mảng Person với kích thước 3
+                Person[] persons = new Person[3];
                 for (int i = 0; i < 3; i++) {
                     try {
                         String name = ip.getString("Name");
@@ -27,7 +27,7 @@ public class PersonInfo extends Menu {
                         String salary = ip.getString("Salary");
                         System.out.println("-----------------------");
                         Person p = Person.inputPersonInfo(name, address, salary);
-                        persons[i] = p; // Gán phần tử vào mảng
+                        persons[i] = p;
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                         i--;
