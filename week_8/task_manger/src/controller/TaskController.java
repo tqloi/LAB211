@@ -12,21 +12,25 @@ public class TaskController {
         taskList = new TaskList();
     }
 
-    public void addTask(String requirementName, int taskTypeID, String date, double planFrom, double planTo, String assignee, String reviewer) {
+    public boolean addTask(String requirementName, int taskTypeID, String date, double planFrom, double planTo, String assignee, String reviewer) {
         try {
             taskList.addTask(requirementName, date, taskTypeID, planFrom, planTo, assignee, reviewer);
             System.out.println("Successful");
+            return true;
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+            return false;
         }
     }
 
-    public void deleteTask(int id) {
+    public boolean deleteTask(int id) {
         try {
             taskList.deleteTask(id);
             System.out.println("Successful");
+            return true;
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+            return false;
         }
     }
 

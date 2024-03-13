@@ -18,15 +18,23 @@ public class TaskView extends Menu {
     public void execute(int n) {
         switch (n) {
             case 1:
-                System.out.println("------------Add Task---------------");
-                String name = ip.getString("Requirement Name");
-                int taskType = ip.getInt("Task Type");
-                String date = ip.getString("Date");
-                double from = ip.getDouble("From");
-                double to = ip.getDouble("To");
-                String assignee = ip.getString("Assignee");
-                String reviewer = ip.getString("Reviewer");
-                taskController.addTask(name, taskType, date, from, to, assignee, reviewer);
+                String name;
+                int taskType;
+                String date;
+                double from;
+                double to;
+                String assignee;
+                String reviewer;
+                do {
+                    System.out.println("------------Add Task---------------");
+                    name = ip.getString("Requirement Name");
+                    taskType = ip.getInt("Task Type");
+                    date = ip.getString("Date");
+                    from = ip.getDouble("From");
+                    to = ip.getDouble("To");
+                    assignee = ip.getString("Assignee");
+                    reviewer = ip.getString("Reviewer");
+                } while (taskController.addTask(name, taskType, date, from, to, assignee, reviewer) == false);
                 break;
             case 2:
                 System.out.println("---------Del Task------");
